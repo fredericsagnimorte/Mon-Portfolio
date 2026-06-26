@@ -1,0 +1,10 @@
+.hero{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+
+    .hero-image{
+        max-width:500px ;
+    }
+}

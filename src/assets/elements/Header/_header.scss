@@ -1,0 +1,19 @@
+header {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "JetBrains Mono", monospace;
+    border-bottom: 1px white solid;
+
+    h1 {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    ul {
+        display: flex;
+        gap: 1em;
+    }
+}

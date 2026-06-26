@@ -1,0 +1,225 @@
+/* ==========================
+   IMPORTS
+========================== */
+@import "./elements/Header/header";
+@import "./elements/Hero/hero";
+
+/* ==========================
+   VARIABLES
+========================== */
+
+:root {
+    /* Couleurs principales */
+    --primary: #740ceb;
+    --secondary: #2b9de9;
+
+    /* Couleur de fond */
+    --background: color-mix(in srgb, black 92%, var(--secondary));
+    --surface: color-mix(in srgb, var(--background) 92%, white);
+
+    /* Variations Primary */
+    --primary-light: color-mix(in srgb, var(--primary), white 25%);
+    --primary-dark: color-mix(in srgb, var(--primary), black 30%);
+    --primary-soft: color-mix(in srgb, var(--primary), transparent 70%);
+
+    /* Variations Secondary */
+    --secondary-light: color-mix(in srgb, var(--secondary), white 25%);
+    --secondary-dark: color-mix(in srgb, var(--secondary), black 30%);
+    --secondary-soft: color-mix(in srgb, var(--secondary), transparent 75%);
+
+    /* Couleurs utilitaires */
+    --text: color-mix(in srgb, white 92%, var(--primary));
+    --text-muted: color-mix(in srgb, var(--text), black 25%);
+
+    --border: color-mix(in srgb, var(--primary), var(--background) 70%);
+    --shadow: color-mix(in srgb, var(--primary), transparent 85%);
+
+    --radius: 12px;
+
+    --transition: .25s ease;
+}
+
+/* ==========================
+   RESET
+========================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* ==========================
+   TYPOGRAPHIE
+========================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+p {
+    color: var(--text-muted);
+}
+
+a {
+    color: var(--primary-light);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--secondary-light);
+}
+
+/* ==========================
+   LAYOUT
+========================== */
+
+.container {
+    width: min(1200px, 90%);
+    margin: auto;
+}
+
+section {
+    padding: 6rem 0;
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+
+    backdrop-filter: blur(8px);
+
+    transition: var(--transition);
+
+    box-shadow:
+        0 0 10px var(--shadow),
+        0 0 25px color-mix(in srgb, var(--primary), transparent 92%);
+}
+
+.card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 18px var(--primary-soft),
+        0 0 40px color-mix(in srgb, var(--primary), transparent 85%);
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.btn {
+
+    display: inline-block;
+
+    padding: .9rem 1.8rem;
+
+    border-radius: 999px;
+
+    border: none;
+
+    cursor: pointer;
+
+    background: linear-gradient(135deg,
+            var(--primary),
+            var(--secondary));
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+
+    box-shadow: 0 0 15px var(--shadow);
+}
+
+.btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 20px var(--primary-soft),
+        0 0 35px var(--secondary-soft);
+}
+
+/* ==========================
+   INPUTS
+========================== */
+
+input,
+textarea {
+
+    width: 100%;
+
+    padding: 1rem;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    color: var(--text);
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+input:focus,
+textarea:focus {
+
+    border-color: var(--primary);
+
+    box-shadow: 0 0 15px var(--primary-soft);
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary),
+            var(--secondary));
+
+    border-radius: 20px;
+}
