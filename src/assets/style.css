@@ -73,7 +73,7 @@ header ul a:hover::after {
   margin-bottom: 2em;
 }
 #Projets .projectHeader {
-  width: 100%;
+  width: min(1320px, 95%);
   transition: transform 0.4s ease;
   padding-bottom: 1em;
 }
@@ -83,11 +83,10 @@ header ul a:hover::after {
 ========================= */
 .slider {
   position: relative;
-  width: 100%;
+  width: min(1320px, 95%);
   aspect-ratio: 16/9;
   border-radius: 16px;
   overflow: hidden;
-  /* 👈 masque uniquement l'iframe */
   border: 1px solid color-mix(in srgb, var(--primary), transparent 50%);
   box-shadow: 0 0 40px color-mix(in srgb, var(--primary), transparent 60%);
   transition: transform 0.4s ease;
@@ -263,8 +262,8 @@ header ul a:hover::after {
 ========================== */
 :root {
   /* Couleurs principales */
-  --primary: #740ceb;
-  --secondary: #2b9de9;
+  --primary: #9f56f3;
+  --secondary: #59ade6;
   /* Couleur de fond */
   --background: color-mix(in srgb, black 92%, var(--secondary));
   --background-light: color-mix(in srgb, white 92%, var(--secondary));

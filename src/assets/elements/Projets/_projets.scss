@@ -11,7 +11,7 @@
     }
 
     .projectHeader {
-        width: 100%;
+        width: min(1320px,95%);
         transition: transform 0.4s ease;
         padding-bottom: 1em;
     }
@@ -23,12 +23,11 @@
 
 .slider {
     position: relative;
-    width: 100%;
+    width: min(1320px,95%);
     aspect-ratio: 16 / 9;
 
     border-radius: 16px;
     overflow: hidden;
-    /* 👈 masque uniquement l'iframe */
 
     border: 1px solid color-mix(in srgb, var(--primary), transparent 50%);
     box-shadow: 0 0 40px color-mix(in srgb, var(--primary), transparent 60%);
