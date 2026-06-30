@@ -19,7 +19,30 @@ header h1 {
 }
 header ul {
   display: flex;
-  gap: 1em;
+}
+header ul a {
+  padding: 0em 1em;
+  background: none;
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+header ul a::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  z-index: -1;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1s;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+header ul a:hover {
+  color: white;
+}
+header ul a:hover::after {
+  transition: transform 1s;
+  transform: scaleX(1);
 }
 
 #Présentation {
@@ -43,15 +66,16 @@ header ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem 1rem;
+  padding: 4rem 0rem;
   background: var(--background);
 }
 #Projets h2 {
   margin-bottom: 2em;
 }
 #Projets .projectHeader {
-  width: min(1000px, 95%);
+  width: 100%;
   transition: transform 0.4s ease;
+  padding-bottom: 1em;
 }
 
 /* =========================
@@ -59,7 +83,7 @@ header ul {
 ========================= */
 .slider {
   position: relative;
-  width: min(1000px, 95%);
+  width: 100%;
   aspect-ratio: 16/9;
   border-radius: 16px;
   overflow: hidden;
@@ -78,75 +102,76 @@ header ul {
   gap: 20px;
 }
 .slider .github-links .github-icon, .slider .github-links .github-pages-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 1px solid var(--background);
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.slider .github-links .github-icon {
-  background-color: var(--background);
   z-index: 2;
 }
-.slider .github-links .github-icon::after {
-  content: "Lien vers GitHub";
-  z-index: -1;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+.slider .github-links .github-icon img, .slider .github-links .github-pages-icon img {
+  position: relative;
+  z-index: 3;
+}
+.slider .github-links .github-icon, .slider .github-links .github-pages-icon {
+  width: 52px;
+  height: 52px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 52px;
-  height: 52px;
-  padding-right: 32px;
-  border-radius: 26px;
+  border-radius: 50%;
   border: 1px solid var(--background);
+  z-index: 2;
+}
+.slider .github-links .github-icon .tooltip, .slider .github-links .github-pages-icon .tooltip {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  border-radius: 26px;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transition: width 0.25s ease, opacity 0.25s ease;
+  pointer-events: auto;
+}
+.slider .github-links .github-icon {
+  background: var(--background);
+}
+.slider .github-links .github-icon .tooltip {
+  right: 0;
+  transform: translateY(-50%);
+  width: 52px;
+  padding-right: 32px;
   background: var(--background);
   color: var(--text);
+  border: 1px solid var(--background);
   box-shadow: 0 0 12px var(--shadow);
-  pointer-events: none;
-  opacity: 0;
-  overflow: hidden;
-  transition: width 0.25s ease, opacity 0.25s ease;
 }
-.slider .github-links .github-icon:hover::after, .slider .github-links .github-icon:focus::after {
+.slider .github-links .github-icon:hover .tooltip, .slider .github-links .github-icon:focus .tooltip,
+.slider .github-links .github-icon .tooltip:hover {
   width: 200px;
   opacity: 1;
 }
-.slider .github-links .github-pages-icon {
-  background-color: var(--background-light);
-  z-index: 2;
+.slider .github-links .github {
+  /* ==========================
+     GITHUB PAGES
+  ========================== */
 }
-.slider .github-links .github-pages-icon::after {
-  content: "Lien vers GitHub Pages";
-  z-index: -1;
-  position: absolute;
-  top: 50%;
+.slider .github-links .github-pages-icon {
+  background: var(--background-light);
+}
+.slider .github-links .github-pages-icon .tooltip {
   left: 0;
   transform: translateY(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 52px;
-  height: 52px;
   padding-left: 32px;
-  border-radius: 26px;
-  border: 1px solid var(--background);
-  border-left: none;
   background: var(--background-light);
   color: var(--text-dark);
+  border: 1px solid var(--background);
+  border-left: none;
   box-shadow: 0 0 12px var(--shadow);
-  pointer-events: none;
-  opacity: 0;
-  overflow: hidden;
-  transition: width 0.25s ease, opacity 0.25s ease;
 }
-.slider .github-links .github-pages-icon:hover::after, .slider .github-links .github-pages-icon:focus::after {
+.slider .github-links .github-pages-icon:hover .tooltip, .slider .github-links .github-pages-icon:focus .tooltip,
+.slider .github-links .github-pages-icon .tooltip:hover {
   width: 235px;
   opacity: 1;
 }
@@ -186,11 +211,24 @@ header ul {
   cursor: pointer;
   transition: all 0.4s ease;
   z-index: 10;
+  overflow: hidden;
+}
+.arrow::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  z-index: -1;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1s;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
 .arrow:hover {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
   transform: translateY(-50%) scale(1.1);
+}
+.arrow:hover::after {
+  transition: transform 1s;
+  transform: scaleX(1);
 }
 .arrow:active {
   transform: translateY(-50%) scale(0.95);
@@ -247,6 +285,9 @@ header ul {
   --shadow: color-mix(in srgb, var(--primary), transparent 85%);
   --radius: 12px;
   --transition: .25s ease;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* ==========================

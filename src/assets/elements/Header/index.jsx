@@ -5,9 +5,9 @@ function Header() {
             <h1 className="logo">Frédéric Sagnimorte</h1>
             <nav>
                 <ul>
-                    <lo><a href="#Présentation">Présentation</a></lo>
-                    <lo><a href="#Projets">Projets</a></lo>
-                    <lo><a href="#Contact">Contact</a></lo>
+                    <a href="#Présentation"><lo>Présentation</lo></a>
+                    <a href="#Projets"><lo>Projets</lo></a>
+                    <a href="#Contact"><lo>Contact</lo></a>
                 </ul>
             </nav>
         </header >

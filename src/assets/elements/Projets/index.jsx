@@ -47,21 +47,24 @@ function Projets() {
                     <img src={arrowRight} />{" "}
                 </button>
                 <div className="github-links">
-                    <button
-                        className="github-icon"
-                    >
-                        <img src={github} />{" "}
-                    </button>
-                    <button
-                        className="github-pages-icon"
-                    >
-                        <img src={github_pages} />{" "}
-                    </button>
+                    <a href={projects[compteur].github} target="_blank" rel="noopener noreferrer" className="github-icon">
+                        <img src={github} alt="GitHub" />
+                        <span className="tooltip">
+                            Lien vers GitHub
+                        </span>
+                    </a>
+
+                    <a href={projects[compteur].demo} target="_blank" rel="noopener noreferrer" className="github-pages-icon">
+                        <img src={github_pages} alt="GitHub Pages" />
+                        <span className="tooltip">
+                            Lien vers GitHub
+                        </span>
+                    </a>
                 </div>
 
 
-            </div>
-        </section>
+            </div >
+        </section >
     )
 }
 

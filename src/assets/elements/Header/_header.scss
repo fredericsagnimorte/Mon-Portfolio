@@ -16,6 +16,36 @@ header {
 
     ul {
         display: flex;
-        gap: 1em;
+
+        a {
+            padding: 0em 1em;
+            background: none;
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+
+            &::after {
+                position: absolute;
+                content: '';
+                inset: 0;
+                z-index: -1;
+                transform-origin: left;
+                transform: scaleX(0);
+                transition: transform 1s;
+                background: linear-gradient(135deg,
+                        var(--primary),
+                        var(--secondary));
+            }
+
+            &:hover {
+
+                color: white;
+
+                &::after {
+                    transition: transform 1s;
+                    transform: scaleX(1);
+                }
+            }
+        }
     }
 }
