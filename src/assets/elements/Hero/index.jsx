@@ -1,23 +1,24 @@
 function Hero() {
     return (
-        <section className="hero">
+        <section id="Présentation">
             <img src="./src/assets/images/programing.webp"
-            alt="Illustration développement web"
-            className="hero-image"
+                alt="Illustration développement web"
+                className="hero-image"
             />
             <div className="hero-content">
 
                 <h2>Développeur Front-End React</h2>
-
+                <p>Bonjour, je suis Frédéric</p>
                 <p>
-                    Je crée des interfaces web modernes,
-                    rapides et accessibles.
+                    Passionné par le développement web, je transforme des maquettes en interfaces modernes, responsives et accessibles grâce à React, JavaScript et CSS.
+                </p>
+                <p>
+                    J'aime concevoir des applications web où le design, la performance et l'expérience utilisateur occupent une place centrale.
                 </p>
 
                 <p className="hero-stack">
-                    React • JavaScript • UI • CSS
+                    React • JavaScript • HTML • CSS • Git
                 </p>
-
             </div>
 
         </section>

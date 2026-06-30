@@ -1,10 +1,12 @@
 header {
     position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: "JetBrains Mono", monospace;
     border-bottom: 1px white solid;
+    background-color: var(--background);
 
     h1 {
         display: flex;

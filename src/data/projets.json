@@ -3,21 +3,59 @@
     "id": 1,
     "title": "Booki",
     "description": "Intégration d'une page d'accueil de réservation de voyages en HTML et CSS responsive.",
-    "github": "https://fredericsagnimorte.github.io/Booki/",
-    "stack": ["HTML", "CSS"]
+    "github": "https://github.com/fredericsagnimorte/Booki",
+    "demo":"https://fredericsagnimorte.github.io/Booki/",
+    "stack": [
+      "HTML",
+      "CSS"
+    ]
   },
   {
     "id": 2,
     "title": "Sophie Bluel",
     "description": "Création d'un site portfolio d'architecte avec gestion dynamique des projets via API.",
-    "github": "https://fredericsagnimorte.github.io/Portfolio-sophie-bluel/",
-    "stack": ["JavaScript", "API", "DOM"]
+    "github": "https://github.com/fredericsagnimorte/Portfolio-sophie-bluel",
+    "demo":"https://fredericsagnimorte.github.io/Portfolio-sophie-bluel/",
+    "stack": [
+      "JavaScript",
+      "API",
+      "DOM"
+    ]
   },
   {
     "id": 3,
     "title": "Kasa",
     "description": "Application React de location immobilière avec routing et composants dynamiques.",
-    "github": "https://github.com/frederic/kasa",
-    "stack": ["React", "CSS", "Router"]
+    "github": "https://github.com/fredericsagnimorte/Kasa",
+    "demo":"https://fredericsagnimorte.github.io/Kasa/",
+    "stack": [
+      "React",
+      "CSS",
+      "Router"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Ohmyfood",
+    "description": "Application de reservation de menus",
+    "github": "https://github.com/fredericsagnimorte/cour-3-animations-CSS",
+    "demo":"https://fredericsagnimorte.github.io/cour-3-animations-CSS/",
+    "stack": [
+      "HTML",
+      "CSS",
+      "Animations CSS"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Le Farfa'Timer",
+    "description": "Application de reservation de crénaux horaire pour billard et fléchette  pour le bar Le Farfa'dé",
+    "github": "https://github.com/fredericsagnimorte/FarfaTimer",
+    "demo":"https://fredericsagnimorte.github.io/FarfaTimer/",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
   }
 ]

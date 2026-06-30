@@ -3,6 +3,7 @@
 ========================== */
 @import "./elements/Header/header";
 @import "./elements/Hero/hero";
+@import "./elements/Projets/projets";
 
 /* ==========================
    VARIABLES
@@ -15,6 +16,7 @@
 
     /* Couleur de fond */
     --background: color-mix(in srgb, black 92%, var(--secondary));
+    --background-light: color-mix(in srgb, white 92%, var(--secondary));
     --surface: color-mix(in srgb, var(--background) 92%, white);
 
     /* Variations Primary */
@@ -29,6 +31,7 @@
 
     /* Couleurs utilitaires */
     --text: color-mix(in srgb, white 92%, var(--primary));
+    --text-dark: color-mix(in srgb, black 92%, var(--primary));
     --text-muted: color-mix(in srgb, var(--text), black 25%);
 
     --border: color-mix(in srgb, var(--primary), var(--background) 70%);
@@ -76,6 +79,7 @@ h5,
 h6 {
     font-weight: 700;
     color: var(--primary);
+    text-shadow: var(--shadow) 0 0 15px;
 }
 
 p {

@@ -1,4 +1,4 @@
-.hero{
+#Présentation{
     display:flex;
     align-items: center;
     justify-content: space-around;
@@ -7,4 +7,10 @@
     .hero-image{
         max-width:500px ;
     }
+
+    .hero-content{
+        max-width: 45%;
+    }
+
+    border-bottom: white 1px solid;
 }
