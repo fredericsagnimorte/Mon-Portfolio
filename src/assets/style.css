@@ -6,28 +6,35 @@ header {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   font-family: "JetBrains Mono", monospace;
   border-bottom: 1px white solid;
   background-color: var(--background);
 }
-header h1 {
+header .headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: min(1320px, 95%);
+  margin: 0 auto;
+}
+header .headerContainer h1 {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
-header ul {
+header .headerContainer ul {
   display: flex;
 }
-header ul a {
+header .headerContainer ul a {
   padding: 0em 1em;
   background: none;
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
 }
-header ul a::after {
+header .headerContainer ul a::after {
   position: absolute;
   content: "";
   inset: 0;
@@ -37,42 +44,71 @@ header ul a::after {
   transition: transform 1s;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
-header ul a:hover {
+header .headerContainer ul a:hover {
   color: white;
 }
-header ul a:hover::after {
+header .headerContainer ul a:hover::after {
   transition: transform 1s;
   transform: scaleX(1);
 }
 
 #Présentation {
+  border-bottom: white 1px solid;
+}
+#Présentation .presentation {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
 }
-#Présentation .hero-image {
-  max-width: 500px;
+@media (max-width: 768px) {
+  #Présentation .presentation {
+    flex-direction: column;
+  }
 }
-#Présentation .hero-content {
+#Présentation .presentation {
+  width: min(1320px, 95%);
+  margin: 0 auto;
+}
+#Présentation .presentation .hero-image {
+  max-width: min(500px, 70%);
+}
+@media (max-width: 768px) {
+  #Présentation .presentation .hero-image {
+    margin-bottom: 2em;
+  }
+}
+#Présentation .presentation .hero-content {
   max-width: 45%;
 }
-#Présentation {
-  border-bottom: white 1px solid;
+@media (max-width: 768px) {
+  #Présentation .presentation .hero-content {
+    max-width: 70%;
+  }
 }
 
 #Projets {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 4rem 0rem;
   background: var(--background);
 }
-#Projets h2 {
+#Projets .projetsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  #Projets .projetsContainer {
+    max-width: 70%;
+  }
+}
+#Projets .projetsContainer h2 {
   margin-bottom: 2em;
 }
-#Projets .projectHeader {
+#Projets .projetsContainer .projectHeader {
   width: min(1320px, 95%);
   transition: transform 0.4s ease;
   padding-bottom: 1em;
@@ -248,13 +284,24 @@ header ul a:hover::after {
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-  .arrow {
+  .slider .arrow {
     width: 40px;
     height: 40px;
   }
-  .arrow img {
+  .slider .arrow img {
     width: 14px;
     height: 14px;
+  }
+  .slider .github-links .github-icon, .slider .github-links .github-pages-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .slider .github-links .github-icon img, .slider .github-links .github-pages-icon img {
+    width: 14px;
+    height: 14px;
+  }
+  .slider .github-links .github-icon .tooltip, .slider .github-links .github-pages-icon .tooltip {
+    display: none;
   }
 }
 /* ==========================

@@ -1,19 +1,31 @@
 #Projets {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+
     padding: 4rem 0rem;
     background: var(--background);
 
-    h2 {
-        margin-bottom: 2em;
-    }
 
-    .projectHeader {
-        width: min(1320px,95%);
-        transition: transform 0.4s ease;
-        padding-bottom: 1em;
+    .projetsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            max-width: 70%;
+        }
+
+        h2 {
+            margin-bottom: 2em;
+        }
+
+        .projectHeader {
+            width: min(1320px, 95%);
+            transition: transform 0.4s ease;
+            padding-bottom: 1em;
+        }
     }
 }
 
@@ -23,7 +35,7 @@
 
 .slider {
     position: relative;
-    width: min(1320px,95%);
+    width: min(1320px, 95%);
     aspect-ratio: 16 / 9;
 
     border-radius: 16px;
@@ -256,13 +268,37 @@
 ========================= */
 
 @media (max-width: 768px) {
-    .arrow {
-        width: 40px;
-        height: 40px;
-    }
 
-    .arrow img {
-        width: 14px;
-        height: 14px;
+    .slider {
+        .arrow {
+            width: 40px;
+            height: 40px;
+        }
+
+        .arrow img {
+            width: 14px;
+            height: 14px;
+        }
+
+        .github-links {
+
+            .github {
+
+                &-icon,
+                &-pages-icon {
+                    width: 40px;
+                    height: 40px;
+
+                    img {
+                        width: 14px;
+                        height: 14px;
+                    }
+
+                    .tooltip {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }

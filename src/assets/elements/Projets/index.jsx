@@ -11,62 +11,64 @@ function Projets() {
 
     return (
         <section id="Projets">
-            <h2>Mes projets</h2>
-            <div className="projectHeader">
-                <h3 className="currentProjectName">{projects[compteur].title}</h3>
-                <p>{projects[compteur].description}</p>
-            </div>
-            <div className="slider"
-                title={`Apperçu du site ${projects[compteur].title}`}
-            >
-                <iframe tabindex="-1" lazy src={projects[compteur].demo}
-                    className="iframe-preview"
-                    aria-hidden="true"
-                />
-
-                <button
-                    className="arrow left"
-                    aria-label="Image précédente"
-                    onClick={() => {
-                        compteur > 0
-                            ? updateCompteur(compteur - 1)
-                            : updateCompteur(
-                                projects.length - 1,
-                            );
-                    }}
-                >
-                    <img src={arrowLeft} />
-                </button>
-
-                <button
-                    className="arrow right"
-                    aria-label="Image suivante"
-                    onClick={() => {
-                        compteur < projects.length - 1
-                            ? updateCompteur(compteur + 1)
-                            : updateCompteur(0);
-                    }}
-                >
-                    <img src={arrowRight} />{" "}
-                </button>
-                <div className="github-links">
-                    <a href={projects[compteur].github} target="_blank" rel="noopener noreferrer" className="github-icon">
-                        <img src={github} alt="GitHub" />
-                        <span className="tooltip">
-                            Lien vers GitHub
-                        </span>
-                    </a>
-
-                    <a href={projects[compteur].demo} target="_blank" rel="noopener noreferrer" className="github-pages-icon">
-                        <img src={github_pages} alt="GitHub Pages" />
-                        <span className="tooltip">
-                            Lien vers GitHub Pages
-                        </span>
-                    </a>
+            <div className="projetsContainer">
+                <h2>Mes projets</h2>
+                <div className="projectHeader">
+                    <h3 className="currentProjectName">{projects[compteur].title}</h3>
+                    <p>{projects[compteur].description}</p>
                 </div>
+                <div className="slider"
+                    title={`Apperçu du site ${projects[compteur].title}`}
+                >
+                    <iframe tabindex="-1" lazy src={projects[compteur].demo}
+                        className="iframe-preview"
+                        aria-hidden="true"
+                    />
+
+                    <button
+                        className="arrow left"
+                        aria-label="Image précédente"
+                        onClick={() => {
+                            compteur > 0
+                                ? updateCompteur(compteur - 1)
+                                : updateCompteur(
+                                    projects.length - 1,
+                                );
+                        }}
+                    >
+                        <img src={arrowLeft} />
+                    </button>
+
+                    <button
+                        className="arrow right"
+                        aria-label="Image suivante"
+                        onClick={() => {
+                            compteur < projects.length - 1
+                                ? updateCompteur(compteur + 1)
+                                : updateCompteur(0);
+                        }}
+                    >
+                        <img src={arrowRight} />{" "}
+                    </button>
+                    <div className="github-links">
+                        <a href={projects[compteur].github} target="_blank" rel="noopener noreferrer" className="github-icon">
+                            <img src={github} alt="GitHub" />
+                            <span className="tooltip">
+                                Lien vers GitHub
+                            </span>
+                        </a>
+
+                        <a href={projects[compteur].demo} target="_blank" rel="noopener noreferrer" className="github-pages-icon">
+                            <img src={github_pages} alt="GitHub Pages" />
+                            <span className="tooltip">
+                                Lien vers GitHub Pages
+                            </span>
+                        </a>
+                    </div>
 
 
-            </div >
+                </div >
+            </div>
         </section >
     )
 }

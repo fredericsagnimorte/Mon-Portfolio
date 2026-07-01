@@ -1,16 +1,35 @@
-#Présentation{
-    display:flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-
-    .hero-image{
-        max-width:500px ;
-    }
-
-    .hero-content{
-        max-width: 45%;
-    }
+#Présentation {
 
     border-bottom: white 1px solid;
+
+    .presentation {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        width: min(1320px, 95%);
+        margin: 0 auto;
+
+        .hero-image {
+            max-width: min(500px,70%);
+
+            @media (max-width: 768px) {
+
+                margin-bottom: 2em;
+            }
+        }
+
+        .hero-content {
+            max-width: 45%;
+
+            @media (max-width: 768px) {
+                max-width: 70%;
+            }
+        }
+    }
 }
