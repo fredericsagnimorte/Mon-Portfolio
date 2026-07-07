@@ -62,7 +62,7 @@ header {
                             var(--primary),
                             var(--secondary));
                 }
-
+                &:focus,
                 &:hover {
 
                     color: white;

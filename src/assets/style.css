@@ -61,10 +61,10 @@ header .headerContainer ul a::after {
   transition: transform 1s;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
-header .headerContainer ul a:hover {
+header .headerContainer ul a:focus, header .headerContainer ul a:hover {
   color: white;
 }
-header .headerContainer ul a:hover::after {
+header .headerContainer ul a:focus::after, header .headerContainer ul a:hover::after {
   transition: transform 1s;
   transform: scaleX(1);
 }
@@ -129,10 +129,27 @@ header .headerContainer ul a:hover::after {
   transition: transform 0.4s ease;
   margin: 1em auto 0 auto;
 }
-#Projets .projetsContainer .slider .ifram_nav {
+#Projets .projetsContainer .slider .sr-only-focusable {
   position: absolute;
-  opacity: 0;
-  pointer-events: none;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  font-family: "JetBrains Mono", monospace;
+  border-radius: var(--radius);
+  padding: 1em;
+  border: none;
+}
+#Projets .projetsContainer .slider .sr-only-focusable:not(:focus, :focus-within) {
+  border: 0 !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  width: 1px !important;
+  white-space: nowrap !important;
 }
 #Projets .projetsContainer .slider .github-links {
   position: absolute;
@@ -277,10 +294,10 @@ header .headerContainer ul a:hover::after {
   transition: transform 1s;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
-.arrow:hover {
+.arrow:focus, .arrow:hover {
   transform: translateY(-50%) scale(1.1);
 }
-.arrow:hover::after {
+.arrow:focus::after, .arrow:hover::after {
   transition: transform 1s;
   transform: scaleX(1);
 }

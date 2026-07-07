@@ -33,10 +33,10 @@ function Projets() {
                     title={`Apperçu du site ${projects[compteur].title}`}
                 >
                     <button
-                        className="ifram_nav"
-                        aria-label="Bouton de navigation dans le site intégré"
+                        className="ifram_nav sr-only-focusable"
                         onClick={() => changeTabIndex()}
                     >
+                        Navigation dans le site intégré
                     </button>
                     <iframe tabindex={`${iframeTabIndex}`} lazy src={projects[compteur].demo}
                         className="iframe-preview"

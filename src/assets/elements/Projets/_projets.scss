@@ -29,10 +29,30 @@
             transition: transform 0.4s ease;
             margin: 1em auto 0 auto;
 
-            .ifram_nav {
+            .sr-only-focusable {
                 position: absolute;
-                opacity: 0;
-                pointer-events: none;
+                top: 5%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: linear-gradient(135deg,
+                        var(--primary),
+                        var(--secondary));
+                color: white;
+                font-family: "JetBrains Mono", monospace;
+                border-radius: var(--radius);
+                padding: 1em;
+                border: none; 
+
+                &:not(:focus, :focus-within) {
+                    border: 0 !important;
+                    clip-path: inset(50%) !important;
+                    height: 1px !important;
+                    margin: -1px !important;
+                    overflow: hidden !important;
+                    padding: 0 !important;
+                    width: 1px !important;
+                    white-space: nowrap !important;
+                }
             }
 
             .github-links {
@@ -240,6 +260,7 @@
                 var(--secondary));
     }
 
+    &:focus,
     &:hover {
 
         transform: translateY(-50%) scale(1.1);
@@ -253,6 +274,8 @@
     &:active {
         transform: translateY(-50%) scale(0.95);
     }
+
+
 
     img {
         width: 18px;
