@@ -1,7 +1,4 @@
 #Projets {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     padding: 4rem 0rem;
     background: var(--background);
@@ -12,6 +9,161 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin: 0 auto;
+
+        /* =========================
+   SLIDER CONTAINER
+========================= */
+
+        .slider {
+            position: relative;
+            width: min(1320px, 95%);
+            aspect-ratio: 16 / 9;
+
+            border-radius: 16px;
+            overflow: hidden;
+
+            border: 1px solid color-mix(in srgb, var(--primary), transparent 50%);
+            box-shadow: 0 0 40px color-mix(in srgb, var(--primary), transparent 60%);
+
+            transition: transform 0.4s ease;
+            margin: 1em auto 0 auto;
+
+            .ifram_nav {
+                position: absolute;
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .github-links {
+                position: absolute;
+                bottom: 12px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+
+                .github {
+
+                    &-icon,
+                    &-pages-icon {
+                        position: relative;
+                        z-index: 2;
+
+                        img {
+                            position: relative;
+                            z-index: 3; // Toujours au-dessus
+                        }
+
+                        width: 52px;
+                        height: 52px;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        border-radius: 50%;
+                        border: 1px solid var(--background);
+
+                        z-index: 2;
+
+                        .tooltip {
+                            position: absolute;
+                            top: 50%;
+
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            height: 52px;
+
+                            border-radius: 26px;
+
+                            overflow: hidden;
+                            white-space: nowrap;
+
+                            opacity: 0;
+
+                            transition:
+                                width .25s ease,
+                                opacity .25s ease;
+
+                            pointer-events: auto;
+                        }
+                    }
+
+
+
+                    &-icon {
+
+                        background: var(--background);
+
+                        .tooltip {
+                            right: 0;
+                            transform: translateY(-50%);
+
+                            width: 52px;
+
+                            padding-right: 32px;
+
+                            background: var(--background);
+                            color: var(--text);
+
+                            border: 1px solid var(--background);
+
+                            box-shadow: 0 0 12px var(--shadow);
+                        }
+
+                        &:hover .tooltip,
+                        &:focus .tooltip,
+                        .tooltip:hover {
+                            width: 200px;
+                            opacity: 1;
+                        }
+                    }
+
+                    /* ==========================
+       GITHUB PAGES
+    ========================== */
+
+                    &-pages-icon {
+
+                        background: var(--background-light);
+
+                        .tooltip {
+                            left: 0;
+                            transform: translateY(-50%);
+
+                            width: 52px;
+
+                            padding-left: 32px;
+
+                            background: var(--background-light);
+                            color: var(--text-dark);
+
+                            border: 1px solid var(--background);
+                            border-left: none;
+
+                            box-shadow: 0 0 12px var(--shadow);
+                        }
+
+                        &:hover .tooltip,
+                        &:focus .tooltip,
+                        .tooltip:hover {
+                            width: 235px;
+                            opacity: 1;
+                        }
+                    }
+                }
+
+            }
+
+            img {
+                width: 18px;
+                height: 18px;
+                filter: brightness(1.2);
+            }
+        }
 
         @media (max-width: 768px) {
             max-width: 70%;
@@ -29,153 +181,7 @@
     }
 }
 
-/* =========================
-   SLIDER CONTAINER
-========================= */
 
-.slider {
-    position: relative;
-    width: min(1320px, 95%);
-    aspect-ratio: 16 / 9;
-
-    border-radius: 16px;
-    overflow: hidden;
-
-    border: 1px solid color-mix(in srgb, var(--primary), transparent 50%);
-    box-shadow: 0 0 40px color-mix(in srgb, var(--primary), transparent 60%);
-
-    transition: transform 0.4s ease;
-    margin: 1em auto 0 auto;
-
-    .github-links {
-        position: absolute;
-        bottom: 12px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-
-        .github {
-
-            &-icon,
-            &-pages-icon {
-                position: relative;
-                z-index: 2;
-
-                img {
-                    position: relative;
-                    z-index: 3; // Toujours au-dessus
-                }
-
-                width: 52px;
-                height: 52px;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                border-radius: 50%;
-                border: 1px solid var(--background);
-
-                z-index: 2;
-
-                .tooltip {
-                    position: absolute;
-                    top: 50%;
-
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    height: 52px;
-
-                    border-radius: 26px;
-
-                    overflow: hidden;
-                    white-space: nowrap;
-
-                    opacity: 0;
-
-                    transition:
-                        width .25s ease,
-                        opacity .25s ease;
-
-                    pointer-events: auto;
-                }
-            }
-
-
-
-            &-icon {
-
-                background: var(--background);
-
-                .tooltip {
-                    right: 0;
-                    transform: translateY(-50%);
-
-                    width: 52px;
-
-                    padding-right: 32px;
-
-                    background: var(--background);
-                    color: var(--text);
-
-                    border: 1px solid var(--background);
-
-                    box-shadow: 0 0 12px var(--shadow);
-                }
-
-                &:hover .tooltip,
-                &:focus .tooltip,
-                .tooltip:hover {
-                    width: 200px;
-                    opacity: 1;
-                }
-            }
-
-            /* ==========================
-       GITHUB PAGES
-    ========================== */
-
-            &-pages-icon {
-
-                background: var(--background-light);
-
-                .tooltip {
-                    left: 0;
-                    transform: translateY(-50%);
-
-                    width: 52px;
-
-                    padding-left: 32px;
-
-                    background: var(--background-light);
-                    color: var(--text-dark);
-
-                    border: 1px solid var(--background);
-                    border-left: none;
-
-                    box-shadow: 0 0 12px var(--shadow);
-                }
-
-                &:hover .tooltip,
-                &:focus .tooltip,
-                .tooltip:hover {
-                    width: 235px;
-                    opacity: 1;
-                }
-            }
-        }
-
-    }
-
-    img {
-        width: 18px;
-        height: 18px;
-        filter: brightness(1.2);
-    }
-}
 
 
 /* =========================

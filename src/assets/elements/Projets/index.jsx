@@ -7,6 +7,18 @@ import github_pages from "../../images/github-pages.svg";
 
 function Projets() {
     const [compteur, updateCompteur] = useState(0);
+    const [iframeTabIndex, setIframeTabIndex] = useState(-1);
+
+
+    function changeTabIndex() {
+        if (iframeTabIndex == -1){
+            setIframeTabIndex(0);
+            return;
+        }
+
+        setIframeTabIndex(-1);
+        return;
+    }
 
 
     return (
@@ -20,7 +32,13 @@ function Projets() {
                 <div className="slider"
                     title={`Apperçu du site ${projects[compteur].title}`}
                 >
-                    <iframe tabindex="-1" lazy src={projects[compteur].demo}
+                    <button
+                        className="ifram_nav"
+                        aria-label="Bouton de navigation dans le site intégré"
+                        onClick={() => changeTabIndex()}
+                    >
+                    </button>
+                    <iframe tabindex={`${iframeTabIndex}`} lazy src={projects[compteur].demo}
                         className="iframe-preview"
                         aria-hidden="true"
                     />

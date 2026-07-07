@@ -19,13 +19,30 @@ header .headerContainer {
   width: min(1320px, 95%);
   margin: 0 auto;
 }
-header .headerContainer h1 {
+header .headerContainer .logo {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
+header .headerContainer .logo .extended {
+  display: inline;
+}
+@media (max-width: 768px) {
+  header .headerContainer .logo .extended {
+    display: none;
+  }
+}
+header .headerContainer .logo .reduced {
+  display: none;
+}
+@media (max-width: 768px) {
+  header .headerContainer .logo .reduced {
+    display: inline;
+  }
+}
 header .headerContainer ul {
   display: flex;
+  list-style: none;
 }
 header .headerContainer ul a {
   padding: 0em 1em;
@@ -88,9 +105,6 @@ header .headerContainer ul a:hover::after {
 }
 
 #Projets {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 4rem 0rem;
   background: var(--background);
 }
@@ -99,25 +113,12 @@ header .headerContainer ul a:hover::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  /* =========================
+     SLIDER CONTAINER
+  ========================= */
 }
-@media (max-width: 768px) {
-  #Projets .projetsContainer {
-    max-width: 70%;
-  }
-}
-#Projets .projetsContainer h2 {
-  margin-bottom: 2em;
-}
-#Projets .projetsContainer .projectHeader {
-  width: min(1320px, 95%);
-  transition: transform 0.4s ease;
-  padding-bottom: 1em;
-}
-
-/* =========================
-   SLIDER CONTAINER
-========================= */
-.slider {
+#Projets .projetsContainer .slider {
   position: relative;
   width: min(1320px, 95%);
   aspect-ratio: 16/9;
@@ -128,7 +129,12 @@ header .headerContainer ul a:hover::after {
   transition: transform 0.4s ease;
   margin: 1em auto 0 auto;
 }
-.slider .github-links {
+#Projets .projetsContainer .slider .ifram_nav {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+#Projets .projetsContainer .slider .github-links {
   position: absolute;
   bottom: 12px;
   width: 100%;
@@ -136,15 +142,15 @@ header .headerContainer ul a:hover::after {
   justify-content: center;
   gap: 20px;
 }
-.slider .github-links .github-icon, .slider .github-links .github-pages-icon {
+#Projets .projetsContainer .slider .github-links .github-icon, #Projets .projetsContainer .slider .github-links .github-pages-icon {
   position: relative;
   z-index: 2;
 }
-.slider .github-links .github-icon img, .slider .github-links .github-pages-icon img {
+#Projets .projetsContainer .slider .github-links .github-icon img, #Projets .projetsContainer .slider .github-links .github-pages-icon img {
   position: relative;
   z-index: 3;
 }
-.slider .github-links .github-icon, .slider .github-links .github-pages-icon {
+#Projets .projetsContainer .slider .github-links .github-icon, #Projets .projetsContainer .slider .github-links .github-pages-icon {
   width: 52px;
   height: 52px;
   display: flex;
@@ -154,7 +160,7 @@ header .headerContainer ul a:hover::after {
   border: 1px solid var(--background);
   z-index: 2;
 }
-.slider .github-links .github-icon .tooltip, .slider .github-links .github-pages-icon .tooltip {
+#Projets .projetsContainer .slider .github-links .github-icon .tooltip, #Projets .projetsContainer .slider .github-links .github-pages-icon .tooltip {
   position: absolute;
   top: 50%;
   display: flex;
@@ -168,10 +174,10 @@ header .headerContainer ul a:hover::after {
   transition: width 0.25s ease, opacity 0.25s ease;
   pointer-events: auto;
 }
-.slider .github-links .github-icon {
+#Projets .projetsContainer .slider .github-links .github-icon {
   background: var(--background);
 }
-.slider .github-links .github-icon .tooltip {
+#Projets .projetsContainer .slider .github-links .github-icon .tooltip {
   right: 0;
   transform: translateY(-50%);
   width: 52px;
@@ -181,20 +187,20 @@ header .headerContainer ul a:hover::after {
   border: 1px solid var(--background);
   box-shadow: 0 0 12px var(--shadow);
 }
-.slider .github-links .github-icon:hover .tooltip, .slider .github-links .github-icon:focus .tooltip,
-.slider .github-links .github-icon .tooltip:hover {
+#Projets .projetsContainer .slider .github-links .github-icon:hover .tooltip, #Projets .projetsContainer .slider .github-links .github-icon:focus .tooltip,
+#Projets .projetsContainer .slider .github-links .github-icon .tooltip:hover {
   width: 200px;
   opacity: 1;
 }
-.slider .github-links .github {
+#Projets .projetsContainer .slider .github-links .github {
   /* ==========================
      GITHUB PAGES
   ========================== */
 }
-.slider .github-links .github-pages-icon {
+#Projets .projetsContainer .slider .github-links .github-pages-icon {
   background: var(--background-light);
 }
-.slider .github-links .github-pages-icon .tooltip {
+#Projets .projetsContainer .slider .github-links .github-pages-icon .tooltip {
   left: 0;
   transform: translateY(-50%);
   width: 52px;
@@ -205,15 +211,28 @@ header .headerContainer ul a:hover::after {
   border-left: none;
   box-shadow: 0 0 12px var(--shadow);
 }
-.slider .github-links .github-pages-icon:hover .tooltip, .slider .github-links .github-pages-icon:focus .tooltip,
-.slider .github-links .github-pages-icon .tooltip:hover {
+#Projets .projetsContainer .slider .github-links .github-pages-icon:hover .tooltip, #Projets .projetsContainer .slider .github-links .github-pages-icon:focus .tooltip,
+#Projets .projetsContainer .slider .github-links .github-pages-icon .tooltip:hover {
   width: 235px;
   opacity: 1;
 }
-.slider img {
+#Projets .projetsContainer .slider img {
   width: 18px;
   height: 18px;
   filter: brightness(1.2);
+}
+@media (max-width: 768px) {
+  #Projets .projetsContainer {
+    max-width: 70%;
+  }
+}
+#Projets .projetsContainer h2 {
+  margin-bottom: 2em;
+}
+#Projets .projetsContainer .projectHeader {
+  width: min(1320px, 95%);
+  transition: transform 0.4s ease;
+  padding-bottom: 1em;
 }
 
 /* =========================

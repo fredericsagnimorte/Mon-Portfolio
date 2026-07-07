@@ -11,19 +11,37 @@ header {
     .headerContainer {
         display: flex;
         align-items: center;
-    justify-content: space-between;
+        justify-content: space-between;
         flex-direction: row;
         width: min(1320px, 95%);
         margin: 0 auto;
 
-        h1 {
+        .logo {
             display: flex;
             align-items: flex-start;
             flex-direction: column;
+
+            .extended {
+                display: inline;
+
+                @media (max-width: 768px) {
+                    display: none;
+                }
+            }
+
+            .reduced {
+                display: none;
+
+                @media (max-width: 768px) {
+                    display: inline;
+                }
+            }
         }
 
         ul {
             display: flex;
+            list-style: none;
+
 
             a {
                 padding: 0em 1em;
