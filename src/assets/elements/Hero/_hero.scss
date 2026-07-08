@@ -8,7 +8,7 @@
         justify-content: space-around;
         flex-direction: row;
 
-        @media (max-width: 768px) {
+        @include tablette {
             flex-direction: column;
         }
 
@@ -18,7 +18,7 @@
         .hero-image {
             max-width: min(500px,70%);
 
-            @media (max-width: 768px) {
+            @include tablette {
 
                 margin-bottom: 2em;
             }
@@ -27,7 +27,7 @@
         .hero-content {
             max-width: 45%;
 
-            @media (max-width: 768px) {
+            @include tablette {
                 max-width: 70%;
             }
         }

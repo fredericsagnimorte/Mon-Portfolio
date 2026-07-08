@@ -340,6 +340,31 @@ header .headerContainer ul a:focus::after, header .headerContainer ul a:hover::a
     display: none;
   }
 }
+#Contact {
+  border-bottom: white 1px solid;
+}
+#Contact .toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  background: #1f2937;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  pointer-events: visible;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+#Contact .toast-success {
+  border-left: 4px solid #10b981;
+}
+#Contact .toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ==========================
    VARIABLES
 ========================== */
@@ -481,6 +506,7 @@ section {
 ========================== */
 input,
 textarea {
+  font-family: "Inter", sans-serif;
   width: 100%;
   padding: 1rem;
   background: var(--surface);
@@ -495,6 +521,18 @@ input:focus,
 textarea:focus {
   border-color: var(--primary);
   box-shadow: 0 0 15px var(--primary-soft);
+}
+
+textarea:not(:-moz-placeholder) {
+  background-image: none !important;
+  background-color: var(--background-light) !important;
+  color: var(--text-dark) !important;
+}
+
+textarea:not(:placeholder-shown) {
+  background-image: none !important;
+  background-color: var(--background-light) !important;
+  color: var(--text-dark) !important;
 }
 
 /* ==========================

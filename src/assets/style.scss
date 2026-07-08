@@ -1,9 +1,12 @@
 /* ==========================
    IMPORTS
 ========================== */
+@import "./mixines/mixines";
+
 @import "./elements/Header/header";
 @import "./elements/Hero/hero";
 @import "./elements/Projets/projets";
+@import "./elements/Contact/contact";
 
 /* ==========================
    VARIABLES
@@ -188,20 +191,14 @@ section {
 input,
 textarea {
 
+    font-family: "Inter", sans-serif;
     width: 100%;
-
     padding: 1rem;
-
     background: var(--surface);
-
     border: 1px solid var(--border);
-
     border-radius: var(--radius);
-
     color: var(--text);
-
     outline: none;
-
     transition: var(--transition);
 }
 
@@ -211,6 +208,13 @@ textarea:focus {
     border-color: var(--primary);
 
     box-shadow: 0 0 15px var(--primary-soft);
+}
+
+textarea:not(:placeholder-shown) {
+    background-image: none !important;
+    background-color: var(--background-light) !important;
+    color: var(--text-dark) !important;
+
 }
 
 /* ==========================

@@ -185,7 +185,7 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @include tablette {
             max-width: 70%;
         }
 
@@ -296,7 +296,7 @@
    RESPONSIVE
 ========================= */
 
-@media (max-width: 768px) {
+@include tablette {
 
     .slider {
         .arrow {

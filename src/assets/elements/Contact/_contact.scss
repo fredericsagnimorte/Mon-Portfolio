@@ -1,0 +1,27 @@
+#Contact {
+    border-bottom: white 1px solid;
+
+    .toast {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 16px 24px;
+        background: #1f2937;
+        color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transform: translateY(50px);
+        pointer-events:visible;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+
+        &-success {
+            border-left: 4px solid #10b981;
+        }
+
+        &.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

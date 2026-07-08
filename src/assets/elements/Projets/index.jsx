@@ -38,7 +38,7 @@ function Projets() {
                     >
                         Navigation dans le site intégré
                     </button>
-                    <iframe tabindex={`${iframeTabIndex}`} lazy src={projects[compteur].demo}
+                    <iframe tabIndex={`${iframeTabIndex}`} lazy="true" src={projects[compteur].demo}
                         className="iframe-preview"
                         aria-hidden="true"
                     />
