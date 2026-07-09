@@ -12,11 +12,11 @@
             flex-direction: column;
         }
 
-        width: min(1320px, 95%);
+        width: 100%;
         margin: 0 auto;
 
         .hero-image {
-            max-width: min(500px,70%);
+            max-width: min(500px, 80%);
 
             @include tablette {
 
@@ -29,6 +29,10 @@
 
             @include tablette {
                 max-width: 70%;
+            }
+
+            @include mobile {
+                max-width: 80%;
             }
         }
     }

@@ -1,5 +1,5 @@
 import projects from "../../../data/projets.json";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import arrowLeft from "../../images/left_arrow.png";
 import arrowRight from "../../images/right_arrow.png";
 import github from "../../images/github-white-icon.svg";
@@ -7,11 +7,29 @@ import github_pages from "../../images/github-pages.svg";
 
 function Projets() {
     const [compteur, updateCompteur] = useState(0);
+    const sliderRef = useRef(null);
+    const [scale, setScale] = useState(1);
     const [iframeTabIndex, setIframeTabIndex] = useState(-1);
+
+    useEffect(() => {
+        function resize() {
+            if (!sliderRef.current) return;
+
+            const width = sliderRef.current.offsetWidth;
+
+            setScale(width / 1920);
+        }
+
+        resize();
+
+        window.addEventListener("resize", resize);
+
+        return () => window.removeEventListener("resize", resize);
+    }, []);
 
 
     function changeTabIndex() {
-        if (iframeTabIndex == -1){
+        if (iframeTabIndex == -1) {
             setIframeTabIndex(0);
             return;
         }
@@ -30,6 +48,7 @@ function Projets() {
                     <p>{projects[compteur].description}</p>
                 </div>
                 <div className="slider"
+                    ref={sliderRef}
                     title={`Apperçu du site ${projects[compteur].title}`}
                 >
                     <button
@@ -38,10 +57,16 @@ function Projets() {
                     >
                         Navigation dans le site intégré
                     </button>
-                    <iframe tabIndex={`${iframeTabIndex}`} lazy="true" src={projects[compteur].demo}
-                        className="iframe-preview"
-                        aria-hidden="true"
-                    />
+                    <div className="iframe-wrapper">
+                        <iframe
+                            tabIndex={iframeTabIndex}
+                            lazy="true"
+                            src={projects[compteur].demo}
+                            className="iframe-preview"
+                            aria-hidden="true"
+                            style={{ transform: `scale(${scale})` }}
+                        />
+                    </div>
 
                     <button
                         className="arrow left"

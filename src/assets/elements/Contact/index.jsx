@@ -1,5 +1,5 @@
 import { sendEmail } from "../../services/email";
-import { useRef,useState } from "react";
+import { useRef, useState } from "react";
 
 function Contact() {
 
@@ -15,7 +15,7 @@ function Contact() {
                 form.current.reset();
             })
             .catch((error) => {
-                console.error("Erreur :", error);
+                alert("Erreur :", error);
             });
     }
 
@@ -48,11 +48,9 @@ function Contact() {
                     <label htmlFor="message">Message</label>
                     <textarea name="message" id="message" placeholder="Votre message..." required ></textarea>
                 </div>
-                <div className="form-submit">
-                    <input type="submit" value="Envoyer" />
-                </div>
+                <button type="submit" className="submit-button">Envoyer</button>
             </form>
-            <div className={sent ? "toast toast-success show" : "toast toast-success"} id="toast">
+            <div onClick={()=>setSent(false)} className={sent ? "toast toast-success show" : "toast toast-success"} id="toast">
                 <p>Votre message a été envoyé avec succès.</p>
             </div>
         </section>

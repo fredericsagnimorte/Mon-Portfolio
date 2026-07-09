@@ -1,7 +1,11 @@
 #Projets {
 
-    padding: 4rem 0rem;
+    border-bottom: white 1px solid;
     background: var(--background);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
     .projetsContainer {
@@ -9,7 +13,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
+        width: 100%;
 
         /* =========================
    SLIDER CONTAINER
@@ -17,7 +21,7 @@
 
         .slider {
             position: relative;
-            width: min(1320px, 95%);
+            width: 95%;
             aspect-ratio: 16 / 9;
 
             border-radius: 16px;
@@ -27,7 +31,7 @@
             box-shadow: 0 0 40px color-mix(in srgb, var(--primary), transparent 60%);
 
             transition: transform 0.4s ease;
-            margin: 1em auto 0 auto;
+            margin-top: 1em ;
 
             .sr-only-focusable {
                 position: absolute;
@@ -41,7 +45,7 @@
                 font-family: "JetBrains Mono", monospace;
                 border-radius: var(--radius);
                 padding: 1em;
-                border: none; 
+                border: none;
 
                 &:not(:focus, :focus-within) {
                     border: 0 !important;
@@ -185,16 +189,13 @@
             }
         }
 
-        @include tablette {
-            max-width: 70%;
-        }
 
         h2 {
             margin-bottom: 2em;
         }
 
         .projectHeader {
-            width: min(1320px, 95%);
+            width: 95%;
             transition: transform 0.4s ease;
             padding-bottom: 1em;
         }
@@ -208,11 +209,20 @@
    IFRAME
 ========================= */
 
-.iframe-preview {
+.iframe-wrapper {
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+.iframe-preview {
+    width: 1920px;
+    height: 1080px;
+
     border: none;
     background: white;
+
+    transform-origin: top left;
 }
 
 /* =========================
@@ -260,7 +270,6 @@
                 var(--secondary));
     }
 
-    &:focus,
     &:hover {
 
         transform: translateY(-50%) scale(1.1);
@@ -284,11 +293,11 @@
     }
 
     &.left {
-        left: 12px;
+        left: 0.5em;
     }
 
     &.right {
-        right: 12px;
+        right: 0.5em;
     }
 }
 
@@ -297,35 +306,64 @@
 ========================= */
 
 @include tablette {
+    #Projets {
+        .projetsContainer {
 
-    .slider {
-        .arrow {
-            width: 40px;
-            height: 40px;
-        }
+            max-width: 70%;
 
-        .arrow img {
-            width: 14px;
-            height: 14px;
-        }
-
-        .github-links {
-
-            .github {
-
-                &-icon,
-                &-pages-icon {
+            .slider {
+                .arrow {
                     width: 40px;
                     height: 40px;
+                }
 
-                    img {
-                        width: 14px;
-                        height: 14px;
+                .arrow img {
+                    width: 14px;
+                    height: 14px;
+                }
+
+                .github-links {
+
+                    .github {
+
+                        &-icon,
+                        &-pages-icon {
+                            width: 40px;
+                            height: 40px;
+
+                            img {
+                                width: 14px;
+                                height: 14px;
+                            }
+
+                            .tooltip {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@include mobile {
+    #Projets {
+        .projetsContainer {
+            max-width: 80%;
+
+            .slider {
+
+                .arrow {
+                    &.left {
+                        left: 0;
                     }
 
-                    .tooltip {
-                        display: none;
+                    &.right {
+                        right: 0;
                     }
+
                 }
             }
         }
