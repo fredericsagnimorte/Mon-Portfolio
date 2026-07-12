@@ -17,9 +17,10 @@
     "github": "https://github.com/fredericsagnimorte/Portfolio-sophie-bluel",
     "demo":"https://fredericsagnimorte.github.io/Portfolio-sophie-bluel/",
     "stack": [
+      "HTML",
+      "CSS",
       "JavaScript",
-      "API",
-      "DOM"
+      "API"
     ]
   },
   {
@@ -29,9 +30,11 @@
     "github": "https://github.com/fredericsagnimorte/Kasa",
     "demo":"https://fredericsagnimorte.github.io/Kasa/",
     "stack": [
-      "React",
+      "HTML",
       "CSS",
-      "Router"
+      "React",
+      "React Router",
+      "SCSS"
     ]
   },
   {
@@ -43,7 +46,8 @@
     "stack": [
       "HTML",
       "CSS",
-      "Animations CSS"
+      "Animations CSS",
+      "SCSS"
     ]
   },
   {

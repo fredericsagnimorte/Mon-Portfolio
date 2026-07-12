@@ -1,8 +1,10 @@
+import programing from "../../images/programing.webp";
+
 function Hero() {
     return (
         <section id="Présentation">
             <div className="presentation">
-                <img src="./src/assets/images/programing.webp"
+                <img src={`${programing}`}
                     alt="Illustration développement web"
                     className="hero-image"
                 />

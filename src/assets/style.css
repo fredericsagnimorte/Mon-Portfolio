@@ -138,6 +138,7 @@ header .headerContainer ul a:focus::after, header .headerContainer ul a:hover::a
   box-shadow: 0 0 40px color-mix(in srgb, var(--primary), transparent 60%);
   transition: transform 0.4s ease;
   margin-top: 1em;
+  margin-bottom: 1em;
 }
 #Projets .projetsContainer .slider .sr-only-focusable {
   position: absolute;
@@ -248,6 +249,32 @@ header .headerContainer ul a:focus::after, header .headerContainer ul a:hover::a
   height: 18px;
   filter: brightness(1.2);
 }
+#Projets .projetsContainer .stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#Projets .projetsContainer .stack-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1em;
+  list-style: none;
+  padding: 0;
+}
+#Projets .projetsContainer .stack-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+@media (max-width: 576px) {
+  #Projets .projetsContainer .stack-list li {
+    font-size: 0.8em;
+  }
+}
+#Projets .projetsContainer .stack-list li::before {
+  content: "•";
+}
 #Projets .projetsContainer h2 {
   margin-bottom: 2em;
 }
@@ -292,7 +319,7 @@ header .headerContainer ul a:focus::after, header .headerContainer ul a:hover::a
   backdrop-filter: blur(12px);
   box-shadow: 0 0 25px color-mix(in srgb, var(--primary), transparent 70%);
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.25s ease;
   z-index: 10;
   overflow: hidden;
 }
@@ -303,14 +330,14 @@ header .headerContainer ul a:focus::after, header .headerContainer ul a:hover::a
   z-index: -1;
   transform-origin: left;
   transform: scaleX(0);
-  transition: transform 1s;
+  transition: transform 0.25s;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
 .arrow:hover {
   transform: translateY(-50%) scale(1.1);
 }
 .arrow:hover::after {
-  transition: transform 1s;
+  transition: transform 0.25s;
   transform: scaleX(1);
 }
 .arrow:active {
@@ -480,6 +507,11 @@ footer .footer-nav section {
 }
 footer .footer-nav section ul {
   list-style: none;
+}
+footer .W3C-CSS {
+  border: 0;
+  width: 88px;
+  height: 31px;
 }
 
 @media (max-width: 576px) {

@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer>
-            <nav class="footer-nav">
+            <nav className="footer-nav">
                 <section>
                     <h2>Liens rapides</h2>
                     <ul>
@@ -20,6 +20,11 @@ function Footer() {
             </nav>
 
             <p>© 2026 Frédéric Sagnimorte. Tous droits réservés.</p>
+            <p>
+                    <img className="W3C-CSS"
+                        src="https://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="CSS Valide !" />
+            </p>
         </footer>
     );
 }

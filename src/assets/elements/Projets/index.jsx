@@ -111,6 +111,16 @@ function Projets() {
 
 
                 </div >
+                <div className="stack">
+                    <h3 className="currentProjectName">{projects[compteur].stack.length <= 1 ? "Technologie utilisée :" : "Technologies utilisées :"}</h3>
+                    <ul className="stack-list">
+                        {
+                            projects[compteur].stack.map((element) => {
+                                return <li  key={element}>{element}</li>;
+                            })
+                        }
+                    </ul>
+                </div>
             </div>
         </section >
     )
