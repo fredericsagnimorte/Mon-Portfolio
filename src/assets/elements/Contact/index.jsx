@@ -1,4 +1,4 @@
-import { sendEmail } from "../../services/email";
+import { sendEmail, sendEmailFeedback } from "../../services/email";
 import { useRef, useState } from "react";
 
 function Contact() {
@@ -13,10 +13,17 @@ function Contact() {
             .then(() => {
                 setSent(true);
                 form.current.reset();
+                setTimeout(()=>setSent(false),20000);
             })
             .catch((error) => {
                 alert("Erreur :", error);
             });
+
+            sendEmailFeedback(form.current)
+            .then()
+            .catch((error)=>{
+                alert("Erreur", error);
+            })
     }
 
     return (
@@ -33,7 +40,7 @@ function Contact() {
                     <input type="text" name="name" id="name" required />
                 </div>
                 <div className="form-firstname">
-                    <label htmlFor="name">Prénom</label>
+                    <label htmlFor="firstname">Prénom</label>
                     <input type="text" name="firstname" id="firstname" required />
                 </div>
                 <div className="form-mail">

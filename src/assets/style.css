@@ -215,10 +215,12 @@ header .headerContainer ul a:focus::after, header .headerContainer ul a:hover::a
   border: 1px solid var(--background);
   box-shadow: 0 0 12px var(--shadow);
 }
-#Projets .projetsContainer .slider .github-links .github-icon:hover .tooltip, #Projets .projetsContainer .slider .github-links .github-icon:focus .tooltip,
-#Projets .projetsContainer .slider .github-links .github-icon .tooltip:hover {
-  width: 200px;
-  opacity: 1;
+@media (min-width: 769px) {
+  #Projets .projetsContainer .slider .github-links .github-icon:hover .tooltip, #Projets .projetsContainer .slider .github-links .github-icon:focus .tooltip,
+  #Projets .projetsContainer .slider .github-links .github-icon .tooltip:hover {
+    width: 200px;
+    opacity: 1;
+  }
 }
 #Projets .projetsContainer .slider .github-links .github {
   /* ==========================
@@ -258,6 +260,7 @@ header .headerContainer ul a:focus::after, header .headerContainer ul a:hover::a
   display: flex;
   justify-content: center;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 1em;
   list-style: none;
   padding: 0;
@@ -338,7 +341,11 @@ header .headerContainer ul a:focus::after, header .headerContainer ul a:hover::a
 }
 .arrow:hover::after {
   transition: transform 0.25s;
-  transform: scaleX(1);
+}
+@media (min-width: 769px) {
+  .arrow:hover::after {
+    transform: scaleX(1);
+  }
 }
 .arrow:active {
   transform: translateY(-50%) scale(0.95);

@@ -142,8 +142,10 @@
                         &:hover .tooltip,
                         &:focus .tooltip,
                         .tooltip:hover {
-                            width: 200px;
-                            opacity: 1;
+                            @include pc{
+                                width: 200px;
+                                opacity: 1;
+                            }
                         }
                     }
 
@@ -199,6 +201,7 @@
                 display: flex;
                 justify-content: center;
                 flex-direction: row;
+                flex-wrap: wrap; 
                 gap: 1em;
 
                 list-style: none;
@@ -308,7 +311,9 @@
 
         &::after {
             transition: transform 0.25s;
-            transform: scaleX(1);
+            @include pc{
+                transform: scaleX(1);
+            }
         }
     }
 

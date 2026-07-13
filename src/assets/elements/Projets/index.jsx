@@ -70,7 +70,7 @@ function Projets() {
 
                     <button
                         className="arrow left"
-                        aria-label="Image précédente"
+                        aria-label="Projet précédent"
                         onClick={() => {
                             compteur > 0
                                 ? updateCompteur(compteur - 1)
@@ -79,30 +79,44 @@ function Projets() {
                                 );
                         }}
                     >
-                        <img src={arrowLeft} />
+                        <img src={arrowLeft} alt=""/>
                     </button>
 
                     <button
                         className="arrow right"
-                        aria-label="Image suivante"
+                        aria-label="Projet suivant"
                         onClick={() => {
                             compteur < projects.length - 1
                                 ? updateCompteur(compteur + 1)
                                 : updateCompteur(0);
                         }}
                     >
-                        <img src={arrowRight} />{" "}
+                        <img src={arrowRight} alt=""/>{" "}
                     </button>
                     <div className="github-links">
-                        <a href={projects[compteur].github} target="_blank" rel="noopener noreferrer" className="github-icon">
-                            <img src={github} alt="GitHub" />
+                        <a href={projects[compteur].github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="github-icon"
+                            aria-label={
+                                `Lien GitHub du projet ${projects[compteur].title}`
+                            }
+                        >
+                            <img src={github} alt=""/>
                             <span className="tooltip">
                                 Lien vers GitHub
                             </span>
                         </a>
 
-                        <a href={projects[compteur].demo} target="_blank" rel="noopener noreferrer" className="github-pages-icon">
-                            <img src={github_pages} alt="GitHub Pages" />
+                        <a href={projects[compteur].demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="github-pages-icon"
+                            aria-label={
+                                `Lien GitHub Pages du projet ${projects[compteur].title}`
+                            }
+                        >
+                            <img src={github_pages} alt=""/>
                             <span className="tooltip">
                                 Lien vers GitHub Pages
                             </span>
@@ -116,7 +130,7 @@ function Projets() {
                     <ul className="stack-list">
                         {
                             projects[compteur].stack.map((element) => {
-                                return <li  key={element}>{element}</li>;
+                                return <li key={element}>{element}</li>;
                             })
                         }
                     </ul>

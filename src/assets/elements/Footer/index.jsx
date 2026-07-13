@@ -14,7 +14,7 @@ function Footer() {
                 <section>
                     <h2>Liens professionnels</h2>
                     <ul>
-                        <li><a href="https://github.com/fredericsagnimorte">GitHub</a></li>
+                        <li><a href="https://github.com/fredericsagnimorte" aria-label="Accedez à mon GitHub">GitHub</a></li>
                     </ul>
                 </section>
             </nav>
