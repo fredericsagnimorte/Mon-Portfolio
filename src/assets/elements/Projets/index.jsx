@@ -60,7 +60,7 @@ function Projets() {
                     <div className="iframe-wrapper">
                         <iframe
                             tabIndex={iframeTabIndex}
-                            lazy="true"
+                            loading="lazy"
                             src={projects[compteur].demo}
                             className="iframe-preview"
                             aria-hidden="true"
@@ -79,7 +79,7 @@ function Projets() {
                                 );
                         }}
                     >
-                        <img src={arrowLeft} alt=""/>
+                        <img src={arrowLeft} alt="" />
                     </button>
 
                     <button
@@ -91,7 +91,7 @@ function Projets() {
                                 : updateCompteur(0);
                         }}
                     >
-                        <img src={arrowRight} alt=""/>{" "}
+                        <img src={arrowRight} alt="" />{" "}
                     </button>
                     <div className="github-links">
                         <a href={projects[compteur].github}
@@ -102,7 +102,7 @@ function Projets() {
                                 `Lien GitHub du projet ${projects[compteur].title}`
                             }
                         >
-                            <img src={github} alt=""/>
+                            <img src={github} alt="" />
                             <span className="tooltip">
                                 Lien vers GitHub
                             </span>
@@ -116,7 +116,7 @@ function Projets() {
                                 `Lien GitHub Pages du projet ${projects[compteur].title}`
                             }
                         >
-                            <img src={github_pages} alt=""/>
+                            <img src={github_pages} alt="" />
                             <span className="tooltip">
                                 Lien vers GitHub Pages
                             </span>
