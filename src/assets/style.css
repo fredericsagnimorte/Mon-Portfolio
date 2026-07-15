@@ -45,14 +45,14 @@ header .headerContainer ul {
   display: flex;
   list-style: none;
 }
-header .headerContainer ul a {
+header .headerContainer ul li {
   padding: 0em 1em;
   background: none;
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
 }
-header .headerContainer ul a::after {
+header .headerContainer ul li::after {
   position: absolute;
   content: "";
   inset: 0;
@@ -62,10 +62,10 @@ header .headerContainer ul a::after {
   transition: transform 1s;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
-header .headerContainer ul a:focus, header .headerContainer ul a:hover {
+header .headerContainer ul li:focus, header .headerContainer ul li:hover {
   color: white;
 }
-header .headerContainer ul a:focus::after, header .headerContainer ul a:hover::after {
+header .headerContainer ul li:focus::after, header .headerContainer ul li:hover::after {
   transition: transform 1s;
   transform: scaleX(1);
 }

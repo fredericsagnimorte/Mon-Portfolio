@@ -7,11 +7,11 @@ function Header() {
                     <span className="extended">Frédéric Sagnimorte</span>
                     <span className="reduced">FS</span>
                 </h1>
-                <nav>
+                <nav aria-label="Naviagation principale">
                     <ul>
-                        <a href="#Présentation"><li>Présentation</li></a>
-                        <a href="#Projets"><li>Projets</li></a>
-                        <a href="#Contact"><li>Contact</li></a>
+                        <li><a href="#Présentation">Présentation</a></li>
+                        <li><a href="#Projets">Projets</a></li>
+                        <li><a href="#Contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
