@@ -37,15 +37,15 @@ function Contact() {
             >
                 <div className="form-name">
                     <label htmlFor="name">Nom</label>
-                    <input type="text" name="name" id="name" required />
+                    <input type="text" name="name" id="name" autoComplete="family-name" required />
                 </div>
                 <div className="form-firstname">
                     <label htmlFor="firstname">Prénom</label>
-                    <input type="text" name="firstname" id="firstname" required />
+                    <input type="text" name="firstname" id="firstname" autoComplete="firsname" required />
                 </div>
                 <div className="form-mail">
                     <label htmlFor="email">E-mail</label>
-                    <input type="email" name="email" id="email" required />
+                    <input type="email" name="email" id="email" autoComplete="email" required />
                 </div>
                 <div className="form-sujet">
                     <label htmlFor="sujet">Objet du contact</label>

@@ -109,6 +109,15 @@ header .headerContainer ul li:focus::after, header .headerContainer ul li:hover:
     max-width: 80%;
   }
 }
+#Présentation .presentation .hero-content .hero-stack {
+  list-style: none;
+  display: flex;
+  gap: 0.8em;
+}
+#Présentation .presentation .hero-content .hero-stack li::before {
+  padding-right: 0.5em;
+  content: "•";
+}
 
 #Projets {
   border-bottom: white 1px solid;
@@ -269,6 +278,7 @@ header .headerContainer ul li:focus::after, header .headerContainer ul li:hover:
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  padding-left: 0.3em;
 }
 @media (max-width: 576px) {
   #Projets .projetsContainer .stack-list li {

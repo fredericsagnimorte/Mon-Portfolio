@@ -34,6 +34,19 @@
             @include mobile {
                 max-width: 80%;
             }
+
+            .hero-stack {
+                list-style: none;
+                display: flex;
+                gap: 0.8em;
+
+                li {
+                    &::before {
+                        padding-right: 0.5em;
+                        content: "•";
+                    }
+                }
+            }
         }
     }
 }

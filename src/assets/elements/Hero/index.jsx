@@ -19,9 +19,13 @@ function Hero() {
                         J'aime concevoir des applications web où le design, la performance et l'expérience utilisateur occupent une place centrale.
                     </p>
 
-                    <p className="hero-stack">
-                        React • JavaScript • HTML • CSS • Git
-                    </p>
+                    <ul className="hero-stack">
+                        <li>React</li>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Git</li>
+                    </ul>
                 </div>
             </div>
 
