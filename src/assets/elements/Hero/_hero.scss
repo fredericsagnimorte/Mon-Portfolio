@@ -39,6 +39,8 @@
                 list-style: none;
                 display: flex;
                 gap: 0.8em;
+                flex-wrap: wrap; 
+                justify-content: flex-start;
 
                 li {
                     &::before {

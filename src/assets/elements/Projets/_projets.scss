@@ -39,24 +39,34 @@
                 top: 5%;
                 left: 50%;
                 transform: translateX(-50%);
-                background: linear-gradient(135deg,
-                        var(--primary),
-                        var(--secondary));
+
+                background: color-mix(in srgb, var(--background), transparent 20%);
+
                 color: white;
                 font-family: "JetBrains Mono", monospace;
+                border: none;
                 border-radius: var(--radius);
                 padding: 1em;
-                border: none;
+                z-index: 100;
 
-                &:not(:focus, :focus-within) {
-                    border: 0 !important;
-                    clip-path: inset(50%) !important;
-                    height: 1px !important;
-                    margin: -1px !important;
-                    overflow: hidden !important;
-                    padding: 0 !important;
-                    width: 1px !important;
-                    white-space: nowrap !important;
+                clip-path: inset(50%);
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                white-space: nowrap;
+                padding: 0;
+                margin: -1px;
+
+                &:focus-visible {
+                    clip-path: none;
+
+                    width: auto;
+                    height: auto;
+
+                    overflow: visible;
+
+                    padding: 1em;
+                    margin: 0;
                 }
             }
 
@@ -142,7 +152,7 @@
                         &:hover .tooltip,
                         &:focus .tooltip,
                         .tooltip:hover {
-                            @include pc{
+                            @include pc {
                                 width: 200px;
                                 opacity: 1;
                             }
@@ -201,7 +211,7 @@
                 display: flex;
                 justify-content: center;
                 flex-direction: row;
-                flex-wrap: wrap; 
+                flex-wrap: wrap;
                 gap: 1em;
 
                 list-style: none;
@@ -214,7 +224,7 @@
                     gap: .3rem;
                     padding-left: 0.3em;
 
-                    @include mobile{
+                    @include mobile {
                         font-size: 0.8em;
                     }
 
@@ -312,7 +322,8 @@
 
         &::after {
             transition: transform 0.25s;
-            @include pc{
+
+            @include pc {
                 transform: scaleX(1);
             }
         }

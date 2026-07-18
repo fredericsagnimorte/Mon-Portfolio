@@ -113,6 +113,8 @@ header .headerContainer ul li:focus::after, header .headerContainer ul li:hover:
   list-style: none;
   display: flex;
   gap: 0.8em;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 #Présentation .presentation .hero-content .hero-stack li::before {
   padding-right: 0.5em;
@@ -154,22 +156,28 @@ header .headerContainer ul li:focus::after, header .headerContainer ul li:hover:
   top: 5%;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: color-mix(in srgb, var(--background), transparent 20%);
   color: white;
   font-family: "JetBrains Mono", monospace;
+  border: none;
   border-radius: var(--radius);
   padding: 1em;
-  border: none;
+  z-index: 100;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0;
+  margin: -1px;
 }
-#Projets .projetsContainer .slider .sr-only-focusable:not(:focus, :focus-within) {
-  border: 0 !important;
-  clip-path: inset(50%) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  width: 1px !important;
-  white-space: nowrap !important;
+#Projets .projetsContainer .slider .sr-only-focusable:focus-visible {
+  clip-path: none;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  padding: 1em;
+  margin: 0;
 }
 #Projets .projetsContainer .slider .github-links {
   position: absolute;
