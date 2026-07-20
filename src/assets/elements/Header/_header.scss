@@ -50,6 +50,10 @@ header {
                 position: relative;
                 border-radius: var(--radius);
                 overflow: hidden;
+                
+                @include mobile {
+                font-size: 0.8em;
+                }
 
                 &::after {
                     position: absolute;

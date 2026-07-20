@@ -7,6 +7,8 @@ export const sendEmail = (form) => {
         form,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
+
+    /*  return Promise.resolve(); */
 };
 
 export const sendEmailFeedback = (form) => {
@@ -16,4 +18,6 @@ export const sendEmailFeedback = (form) => {
         form,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
+
+    /* return Promise.resolve(); */
 };

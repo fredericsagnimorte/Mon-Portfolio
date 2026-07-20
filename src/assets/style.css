@@ -52,6 +52,11 @@ header .headerContainer ul li {
   border-radius: var(--radius);
   overflow: hidden;
 }
+@media (max-width: 576px) {
+  header .headerContainer ul li {
+    font-size: 0.8em;
+  }
+}
 header .headerContainer ul li::after {
   position: absolute;
   content: "";

@@ -57,7 +57,7 @@ function Contact() {
                 </div>
                 <button type="submit" className="submit-button">Envoyer</button>
             </form>
-            <div onClick={()=>setSent(false)} className={sent ? "toast toast-success show" : "toast toast-success"} id="toast">
+            <div onClick={()=>setSent(false)} className={sent ? "toast toast-success show" : "toast toast-success"} id="toast" aria-live="polite">
                 <p>Votre message a été envoyé avec succès.</p>
             </div>
         </section>
