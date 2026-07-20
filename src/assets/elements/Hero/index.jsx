@@ -5,7 +5,7 @@ function Hero() {
         <section id="Présentation">
             <div className="presentation">
                 <img src={`${programing}`}
-                    alt="Illustration développement web"
+                    alt=""
                     className="hero-image"
                 />
                 <div className="hero-content">
