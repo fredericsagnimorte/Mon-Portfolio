@@ -41,7 +41,7 @@ function Contact() {
                 </div>
                 <div className="form-firstname">
                     <label htmlFor="firstname">Prénom</label>
-                    <input type="text" name="firstname" id="firstname" autoComplete="firsname" required />
+                    <input type="text" name="firstname" id="firstname" autoComplete="firstname" required />
                 </div>
                 <div className="form-mail">
                     <label htmlFor="email">E-mail</label>
