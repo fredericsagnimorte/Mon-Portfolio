@@ -11,6 +11,15 @@ function Projets() {
     const [scale, setScale] = useState(1);
     const [iframeTabIndex, setIframeTabIndex] = useState(-1);
 
+    /* retire le focus si présent dans l'iframe */
+    const iframeRef = useRef();
+
+    function handleLoad() {
+        iframeRef.current.contentWindow.document.activeElement?.blur();
+    }
+
+
+
     useEffect(() => {
         function resize() {
             if (!sliderRef.current) return;
@@ -62,6 +71,8 @@ function Projets() {
                             tabIndex={iframeTabIndex}
                             loading="lazy"
                             src={projects[compteur].demo}
+                            ref={iframeRef}
+                            onLoad={handleLoad}
                             className="iframe-preview"
                             aria-hidden="true"
                             style={{ transform: `scale(${scale})` }}

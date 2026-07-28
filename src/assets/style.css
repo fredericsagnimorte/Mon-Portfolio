@@ -103,15 +103,18 @@ header .headerContainer ul li:focus::after, header .headerContainer ul li:hover:
 }
 #Présentation .presentation .hero-content {
   max-width: 45%;
+  padding: 0 2em;
 }
 @media (max-width: 768px) {
   #Présentation .presentation .hero-content {
     max-width: 70%;
+    padding: 0;
   }
 }
 @media (max-width: 576px) {
   #Présentation .presentation .hero-content {
     max-width: 80%;
+    padding: 0;
   }
 }
 #Présentation .presentation .hero-content .hero-stack {
